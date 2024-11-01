@@ -6,9 +6,6 @@ This paper was published in Measurement Science and Technology(DOI 10.1088/1361-
 
 Only using the point clouds collected by a Kinect sensor to perform 3D object detection is a very challenging task for indoor sence understanding. In this paper, we propose a novel point clouds based 3D object detection framework named Weighted VoteNet (W-VoteNet), which systematically enhances seed points, voting points, and proposal objects to varying degree, thereby enhancing the detection accuracy of indoor scene point clouds. Firstly, a new neighborhood feature enhancement module was designed to enhance the features of the seed point, which can better utilize the neighborhood feature of the seed point. Secondly, a weighted voting module is implemented to increase the accuracy of voting, allowing more prospect seed points to participate in voting. Finally, a new semantic relation reasoning module is proposed to get the semantic relationship features of the proposal object, which can further decrease false alarm rate. The three modules we proposed all contribute to more accurate voting and more effective proposals. The experimental results on two benchmark indoor 3D object detection datasets, SUN RGB-D and ScanNet V2, demonstrate the effectiveness of our approach. 
 
-In this repository, we provide W-VoteNet model implementation (with Pytorch) as well as data preparation, training and evaluation scripts on SUN RGB-D and ScanNet.
-
-
 ## Installation
 
 Install [Pytorch](https://pytorch.org/get-started/locally/) and [Tensorflow](https://github.com/tensorflow/tensorflow) (for TensorBoard). It is required that you have access to GPUs. Matlab is required to prepare data for SUN RGB-D. The code is tested with Ubuntu 18.04, Pytorch v1.1, TensorFlow v1.14, CUDA 10.0 and cuDNN v7.4. Note: After a code update on 2/6/2020, the code is now also compatible with Pytorch v1.2+
