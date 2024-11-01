@@ -381,22 +381,3 @@ def train(start_epoch):
 if __name__ == '__main__':
     train(start_epoch)
 
-'''
-输入数据：
-输入的是numpy类型的点云文件，sunrgbd数据集将点云文件以mat格式存储，可以使用sunrgbd_data文件可视化
-000001_bbox.npy：这是一个NumPy数组文件，它包含了与目标边界框（bounding box）相关的信息。边界框是用于定位和描述目标物体位置的矩形框。
-该文件可能包含每个目标物体的边界框的坐标、大小、类别标签等信息。
-000001_pc.npz：这是一个压缩的NumPy数组文件（npz格式），它保存了点云数据。
-点云数据是以稀疏形式存储的，每个点包含其在三维空间中的坐标以及其他可能的属性，如颜色或法线。该文件可能包含预处理后的点云数据，用于进行室内3D点云目标检测和分割任务。
-000001_votes.npz：这也是一个压缩的NumPy数组文件（npz格式），它保存了投票（voting）相关的信息。
-投票是指在点云中根据目标的特征和位置进行投票来确定目标的位置和姿态。该文件可能包含点云中每个点的投票信息，用于后续的目标检测和位姿估计。
-
-损失：
-mean vote_loss：vote的真是坐标点（其实就是真实的物体中心）与pred_vote的L1距离差距的均值
-mean objectness_loss：aggregated_vote是否预测box的loss，当aggregated_vote与实际物体中心点离的比较近的时候，才是预测object
-mean center_loss：预测的最终box的center与真实center的差距，其中很重要的一点是，当出现某一个真实的物体上没有aggregated_vote时，会使得第二项loss变得很大
-mean heading_reg_loss：真实值在[-1,1]之间，使用huber loss计算，huber loss的delta是1.0
-mean size_cls_loss：当预置的size很接近时，这个loss会比较大
-mean size_reg_loss：因为是在预置的size上做reg，所以loss会收敛到比较小。
-
-'''
