@@ -1,6 +1,5 @@
 # Efficient Indoor 3D Object Detection in Point Clouds Using the Kinect Sensor
 
-![teaser](https://github.com/facebookresearch/votenet/blob/master/doc/teaser.jpg)
 
 ## Introduction
 This paper was published in Measurement Science and Technology(DOI 10.1088/1361-6501/ad8d73)
